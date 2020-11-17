@@ -1,0 +1,20 @@
+{
+  "envId": "fscz-faca0",
+  "framework": {
+    "name": "jumpserver",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "jumpserver",
+          "servicePath": "/jumpserver",
+          "localPath": "./",
+          "uploadType": "image",
+          "imageInfo": {
+            "imageUrl": "ccr.ccs.tencentyun.com/tcb-913648653-qdkp/fscz-faca0_jumpserver"
+          }
+        }
+      }
+    }
+  }
+}

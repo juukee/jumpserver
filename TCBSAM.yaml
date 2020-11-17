@@ -1,0 +1,52 @@
+TCBSAMFormatVersion: '2020-06-15'
+License: MIT
+Description: 基于 CloudBase Framework 构建
+Category: CloudApp
+Tags:
+  - CloudBase
+SourceUrl: 'https://github.com/TencentCloudBase/cloudbase-framework'
+ReleaseNotesUrl: 'https://github.com/TencentCloudBase/cloudbase-framework/releases'
+IconUrl: >-
+  https://main.qcloudimg.com/raw/f87b49914efe502722f9aa128f5d8865/hello_world.svg
+IntroUrl: 'https://cloud.tencent.com/document/product/876/44547'
+ChangeLog:
+  - Title: 1.0.0
+    Content:
+      - 初次发布
+Author:
+  AuthorName: Tencent CloudBase
+  Email: cloudbase@tencent.com
+  Url: 'https://github.com/TencentCloudBase/cloudbase-framework'
+Contributors:
+  - AuthorName: Tencent CloudBase
+    Email: cloudbase@tencent.com
+    Url: 'https://github.com/TencentCloudBase/cloudbase-framework'
+Name: fx-jumpserver
+Version: 1.0.0
+DisplayName: fx-jumpserver
+Resources:
+  Jumpserver:
+    Type: 'CloudBase::CloudBaseRun'
+    Properties:
+      ServerName: jumpserver
+      Description: 基于云开发 CloudBase Framework 部署的云托管
+      isPublic: true
+      UploadType: image
+      FlowRatio: 100
+      Cpu: 1
+      Mem: 1
+      MinNum: 1
+      MaxNum: 10
+      PolicyType: cpu
+      PolicyThreshold: 60
+      ContainerPort: 80
+      DockerfilePath: ./Dockerfile
+      BuildDir: ./
+      Path: /jumpserver
+      EnvParams: '{}'
+      ImageInfo:
+        ImageUrl: 'ccr.ccs.tencentyun.com/tcb-913648653-qdkp/jumpserver:v3'
+EntryPoint:
+  - Label: 服务入口
+    EntryType: HttpService
+    HttpEntryPath: /jumpserver

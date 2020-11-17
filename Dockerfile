@@ -1,4 +1,4 @@
-FROM registry.fit2cloud.com/public/python:v3 as stage-build
+FROM ccr.ccs.tencentyun.com/tcb-913648653-qdkp/jumpserver:v3 as stage-build
 MAINTAINER Jumpserver Team <ibuler@qq.com>
 ARG VERSION
 ENV VERSION=$VERSION
@@ -8,7 +8,7 @@ ADD . .
 RUN cd utils && bash -ixeu build.sh
 
 
-FROM registry.fit2cloud.com/public/python:v3
+FROM ccr.ccs.tencentyun.com/tcb-913648653-qdkp/jumpserver:v3
 ARG PIP_MIRROR=https://pypi.douban.com/simple
 ENV PIP_MIRROR=$PIP_MIRROR
 ARG MYSQL_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/mysql/yum/mysql57-community-el6/
